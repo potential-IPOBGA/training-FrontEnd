@@ -1,6 +1,15 @@
 import React, { FunctionComponent, useReducer } from 'react'
-import { action, Context } from '../type'
+import { Context } from '../type'
 import { trainingReducer } from "../trainingReducer"
+import GroupSection from "./group/GroupSection"
+import TrainerSection from "./Trainer/TrainerSection"
+import TraineeSection from "./trainee/TraineeSection"
+import { PageContent } from './style'
+
+const TrainingContext = React.createContext({
+  context: {},
+  dispatchContext: {}
+})
 
 const App: FunctionComponent = () => {
   const initialContext: Context = {
@@ -11,15 +20,15 @@ const App: FunctionComponent = () => {
 
   const [context, dispatchContext] = useReducer(trainingReducer, initialContext)
 
-  const TrainingContext = React.createContext({})
-
   return (
     <TrainingContext.Provider value={{ context, dispatchContext }}>
-      <div>
-        <h2>My first Apollo app 🚀</h2>
-      </div>
+      <PageContent>
+        <GroupSection/>
+        <TrainerSection/>
+        <TraineeSection/>
+      </PageContent>
     </TrainingContext.Provider>
   )
 }
 
-export default App
+export { App,TrainingContext }
