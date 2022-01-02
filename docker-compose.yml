@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  training-frontend:
+    build: training-frontend
+    image: training-frontend
+    container_name: training-frontend
+    ports:
+      - '3000:3000'
