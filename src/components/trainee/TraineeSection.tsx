@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useContext } from "react"
-import { AddTraineeButton, Trainee, TraineeMembers } from "./style"
+import { AddTraineeButton, TraineeMembers } from "./style"
 import { PlusOutlined } from "@ant-design/icons"
 import { Trainer } from "../Trainer/style"
 import { TrainingContext } from "../App"
