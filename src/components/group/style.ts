@@ -18,7 +18,7 @@ export const ShuffleButton = styled(Button)`
 `
 
 export const GroupContent = styled.div`
-  margin: 2rem 0;
+  margin: 1rem 0;
   overflow-y: auto;
   height: 80%;
 `
@@ -29,6 +29,7 @@ export const GroupItemContainer = styled.div`
   height: 9rem;
   display: grid;
   grid-template-rows: 2fr 3fr;
+  margin: 0 0 2rem 0;
 `
 
 export const GroupTitleContainer = styled.div`
@@ -37,7 +38,7 @@ export const GroupTitleContainer = styled.div`
   justify-content: space-between;
 `
 
-export const GroupNumber = styled(Text)`
+export const GroupName = styled(Text)`
   align-self: center;
   font-size: x-large;
   color: azure;

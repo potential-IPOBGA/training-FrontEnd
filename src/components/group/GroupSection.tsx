@@ -7,7 +7,7 @@ import GroupItem from "./GroupItem"
 
 
 const GroupSection: FunctionComponent = () => {
-  const { dispatchContext } = useContext(TrainingContext)
+  const { dispatch } = useContext(TrainingContext)
 
   const handleShuffle = ():void => {
     return

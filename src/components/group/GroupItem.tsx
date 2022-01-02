@@ -1,24 +1,35 @@
-import React,{ FunctionComponent } from "react"
-import { GroupItemContainer, GroupTitleContainer, GroupNumber, TrainerInGroup, GroupMemberContainer, Trainee } from "./style"
+import React, { FunctionComponent, useContext } from "react"
+import { GroupItemContainer, GroupTitleContainer, GroupName, TrainerInGroup, GroupMemberContainer, Trainee } from "./style"
+import { TrainingContext } from "../App"
 
 const GroupItem:FunctionComponent = () => {
+  const { context, dispatch } = useContext(TrainingContext)
+
+  const { groups } = context
+
   return(
-    <GroupItemContainer  >
-      <GroupTitleContainer>
-        <div />
-        <GroupNumber strong={true}>1组</GroupNumber>
-        <div>
-          <TrainerInGroup size={"large"}>Trainer No1</TrainerInGroup>
-          <TrainerInGroup size={"large"}>Trainer No2</TrainerInGroup>
-        </div>
-      </GroupTitleContainer>
-      <GroupMemberContainer>
-        <Trainee size={"large"} >Trainee 01</Trainee>
-        <Trainee size={"large"} >Trainee 02</Trainee>
-        <Trainee size={"large"} >Trainee 03</Trainee>
-        <Trainee size={"large"} >Trainee 04</Trainee>
-      </GroupMemberContainer>
-    </GroupItemContainer>
+    <>
+      {groups.map(({ id:groupId,name:groupName,trainers,trainees }) => {
+        return(
+          <GroupItemContainer key={groupId}>
+            <GroupTitleContainer>
+              <div />
+              <GroupName strong={true}>{groupName}</GroupName>
+              <div>
+                {trainers.map(({ id:trainerId, name:trainerName }) =>
+                  (<TrainerInGroup key={trainerId} size={"large"}>{trainerName}</TrainerInGroup>)
+                )}
+              </div>
+            </GroupTitleContainer>
+            <GroupMemberContainer>
+              {trainees.map(({ id:traineeId, name:traineeName }) =>
+                (<Trainee key={traineeId} size={"large"} >{traineeName}</Trainee>)
+              )}
+            </GroupMemberContainer>
+          </GroupItemContainer>
+        )
+      })}
+    </>
   )
 }
 

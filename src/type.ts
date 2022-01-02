@@ -1,15 +1,18 @@
+import { Action } from "./components/dispacthActions"
+import { Dispatch } from "react"
+
 export type Trainer = {
   id:number;
   name:string;
   grouped:boolean;
-  group:Group;
+  groupNumber?:number;
 }
 
 export type Trainee = {
   id:number;
   name:string;
   grouped:boolean;
-  group:Group;
+  groupNumber?:number;
 }
 
 
@@ -26,11 +29,7 @@ export type Context = {
   groups: Group[];
 }
 
-export type action = {
-  type?: ActionType,
-  payload?: Context,
-}
-
-export enum ActionType {
-
+export type AppContextContainer = {
+  context: Context,
+  dispatch: Dispatch<Action<any>>
 }

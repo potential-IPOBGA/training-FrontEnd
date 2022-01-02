@@ -1,0 +1,133 @@
+import { Context, Group, Trainee, Trainer } from "./type"
+
+const data: Context = {
+  trainers: [
+    {
+      id:1,
+      name:'trainer01',
+      grouped:true,
+      groupNumber:1,
+    },
+    {
+      id:2,
+      name:'trainer02',
+      grouped:true,
+      groupNumber:1,
+    },
+    {
+      id:3,
+      name:'trainer03',
+      grouped:true,
+      groupNumber:2,
+    },
+    {
+      id:4,
+      name:'trainer04',
+      grouped:true,
+      groupNumber:2,
+    },
+    {
+      id:5,
+      name:'trainer05',
+      grouped:false,
+    },
+  ],
+  trainees: [
+    {
+      id:1,
+      name:'trainee01',
+      grouped:true,
+      groupNumber:1,
+    },
+    {
+      id:2,
+      name:'trainee02',
+      grouped:true,
+      groupNumber:1,
+    },
+    {
+      id:3,
+      name:'trainee03',
+      grouped:true,
+      groupNumber:2,
+    },
+    {
+      id:4,
+      name:'trainee04',
+      grouped:true,
+      groupNumber:2,
+    },
+    {
+      id:5,
+      name:'trainee05',
+      grouped:false,
+    }
+  ],
+  groups: [
+    {
+      id:1,
+      name:'Group01',
+      trainers: [
+        {
+          id:1,
+          name:'trainer01',
+          grouped:true,
+          groupNumber:1,
+        },
+        {
+          id:2,
+          name:'trainer02',
+          grouped:true,
+          groupNumber:1,
+        },
+      ],
+      trainees: [
+        {
+          id:1,
+          name:'trainee01',
+          grouped:true,
+          groupNumber:1,
+        },
+        {
+          id:2,
+          name:'trainee02',
+          grouped:true,
+          groupNumber:1,
+        },
+      ]
+    },
+    {
+      id:2,
+      name:'Group02',
+      trainers: [
+        {
+          id:3,
+          name:'trainer03',
+          grouped:true,
+          groupNumber:2,
+        },
+        {
+          id:4,
+          name:'trainer04',
+          grouped:true,
+          groupNumber:2,
+        },
+      ],
+      trainees: [
+        {
+          id:3,
+          name:'trainee03',
+          grouped:true,
+          groupNumber:2,
+        },
+        {
+          id:4,
+          name:'trainee04',
+          grouped:true,
+          groupNumber:2,
+        },
+      ]
+    },
+  ],
+}
+export default data
